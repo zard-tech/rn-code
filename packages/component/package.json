@@ -1,0 +1,11 @@
+{
+  "name": "@zard-tech/rn-code-component",
+  "version": "0.0.1",
+  "author": "Shahul H. Shakila",
+  "private": true,
+  "main": "src",
+  "peerDependencies": {
+    "react": "*",
+    "react-native": "*"
+  }
+}

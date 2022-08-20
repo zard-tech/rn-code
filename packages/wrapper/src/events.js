@@ -1,0 +1,9 @@
+const EVENTS = {
+  // Sent by Editor
+  BOOTSTRAPPED: 'BOOTSTRAPPED',
+  READY: 'READY',
+  CONFIG_UPDATED: 'CONFIG_UPDATED',
+  DOC_CHANGED: 'DOC_CHANGED'
+}
+
+export default EVENTS

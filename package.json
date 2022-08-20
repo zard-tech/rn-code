@@ -1,0 +1,13 @@
+{
+  "name": "@zard-tech/rn-code",
+  "version": "0.0.1",
+  "author": "Shahul H. Shakila",
+  "private": true,
+  "workspaces": {
+    "packages": ["./packages/component", "./packages/shared"],
+    "nohoist": []
+  },
+  "scripts": {
+    "reset": "find . -type dir -name node_modules | xargs rm -rf && rm -rf yarn.lock"
+  }
+}
