@@ -4,7 +4,7 @@
   "author": "Shahul H. Shakila",
   "private": true,
   "workspaces": {
-    "packages": ["./packages/component", "./packages/shared"],
+    "packages": ["./packages/component"],
     "nohoist": []
   },
   "scripts": {

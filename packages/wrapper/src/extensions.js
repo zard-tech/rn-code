@@ -16,6 +16,8 @@ import { php } from '@codemirror/lang-php'
 import { python } from '@codemirror/lang-python'
 import { rust } from '@codemirror/lang-rust'
 
+import { oneDark } from '@codemirror/theme-one-dark'
+
 export const EditorConfigEnum = {
   LINE_NUMBERS: 'LINE_NUMBERS',
   HIGHLIGHT_ACTIVE_LINE_GUTTER: 'HIGHLIGHT_ACTIVE_LINE_GUTTER',
@@ -36,7 +38,8 @@ export const EditorConfigEnum = {
   HIGHLIGHT_SELECTION_MATCHES: 'HIGHLIGHT_SELECTION_MATCHES',
   KEY_MAPPINGS: 'KEY_MAPPINGS',
   
-  LANGUAGE: 'LANGUAGE'
+  LANGUAGE: 'LANGUAGE',
+  THEME: 'THEME'
 }
 
 export const LanguagesEnum = {
@@ -58,7 +61,7 @@ const ConfigExtensionMapping = {
   [EditorConfigEnum.DROP_CURSOR]: () => dropCursor(),
   [EditorConfigEnum.ALLOW_MULTIPLE_SELECTIONS]: () => EditorState.allowMultipleSelections.of(true),
   [EditorConfigEnum.INDENT_ON_INPUT]: () => indentOnInput(),
-  [EditorConfigEnum.SYNTAX_HIGHLIGHTING]: () => syntaxHighlighting(defaultHighlightStyle, {fallback: true}),
+  [EditorConfigEnum.SYNTAX_HIGHLIGHTING]: () => syntaxHighlighting(defaultHighlightStyle, { fallback: true }),
   [EditorConfigEnum.BRACKET_MATCHING]: () => bracketMatching(),
   [EditorConfigEnum.CLOSE_BRACKETS]: () => closeBrackets(),
   [EditorConfigEnum.AUTOCOMPLETE]: () => autocompletion(),
@@ -101,6 +104,13 @@ const ConfigExtensionMapping = {
     }
 
     return undefined
+  },
+
+  [EditorConfigEnum.THEME]: (theme) => {
+    switch (theme) {
+      case 'dark':
+        return oneDark
+    }
   }
 }
 
@@ -121,7 +131,9 @@ export const defaultConfig = {
   [EditorConfigEnum.RECTANGULAR_SELECTION]: true,
   [EditorConfigEnum.CROSSHAIR_CURSOR]: true,
   [EditorConfigEnum.HIGHLIGHT_ACTIVE_LINE]: true,
-  [EditorConfigEnum.HIGHLIGHT_SELECTION_MATCHES]: true
+  [EditorConfigEnum.HIGHLIGHT_SELECTION_MATCHES]: true,
+
+  [EditorConfigEnum.THEME]: 'default'
 }
 
 export function getExtensionsList(config) {

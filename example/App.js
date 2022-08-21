@@ -7,6 +7,8 @@ export default function App() {
     <SafeAreaView style={{ flex: 1 }}>
       <CodeEditor 
         initialValue="Hello, world!"
+        language="javascript"
+        theme="light"
       />
     </SafeAreaView>
   );
