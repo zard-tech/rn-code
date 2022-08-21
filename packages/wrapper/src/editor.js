@@ -14,6 +14,10 @@ class CodeEditor {
       dispatch: this._handler.bind(this)
     }
 
+    document.addEventListener('click', () => {
+      this.focus()
+    })
+
     this.notify(EVENTS.BOOTSTRAPPED)
   }
 
@@ -80,8 +84,10 @@ class CodeEditor {
   }
 
   resetState({ config, value }) {
+    const currentValue = this.state?.doc?.toString() || ''
+
     this.state = EditorState.create({
-      doc: value || '',
+      doc: typeof value === 'string' ? value : currentValue,
       extensions: [
         this._getDocChangeNotifier(),
         ...getExtensionsList(config)
@@ -109,6 +115,12 @@ class CodeEditor {
       config: this.currentConfig,
       value: text
     })
+  }
+
+  __internal__focus() {
+    if (!this.view?.hasFocus()) {
+      this.view?.focus()
+    }
   }
 }
 

@@ -105,23 +105,23 @@ const ConfigExtensionMapping = {
 }
 
 export const defaultConfig = {
-  LINE_NUMBERS: true,
-  HIGHLIGHT_ACTIVE_LINE_GUTTER: true,
-  HIGHLIGHT_SPECIAL_CHARS: true,
-  HISTORY: true,
-  FOLD_GUTTER: true,
-  DRAW_SELECTION: true,
-  DROP_CURSOR: true,
-  ALLOW_MULTIPLE_SELECTIONS: true,
-  INDENT_ON_INPUT: true,
-  SYNTAX_HIGHLIGHTING: true,
-  BRACKET_MATCHING: true,
-  CLOSE_BRACKETS: true,
-  AUTOCOMPLETE: true,
-  RECTANGULAR_SELECTION: true,
-  CROSSHAIR_CURSOR: true,
-  HIGHLIGHT_ACTIVE_LINE: true,
-  HIGHLIGHT_SELECTION_MATCHES: true
+  [EditorConfigEnum.LINE_NUMBERS]: true,
+  [EditorConfigEnum.HIGHLIGHT_ACTIVE_LINE_GUTTER]: true,
+  [EditorConfigEnum.HIGHLIGHT_SPECIAL_CHARS]: true,
+  [EditorConfigEnum.HISTORY]: true,
+  [EditorConfigEnum.FOLD_GUTTER]: true,
+  [EditorConfigEnum.DRAW_SELECTION]: true,
+  [EditorConfigEnum.DROP_CURSOR]: true,
+  [EditorConfigEnum.ALLOW_MULTIPLE_SELECTIONS]: true,
+  [EditorConfigEnum.INDENT_ON_INPUT]: true,
+  [EditorConfigEnum.SYNTAX_HIGHLIGHTING]: true,
+  [EditorConfigEnum.BRACKET_MATCHING]: true,
+  [EditorConfigEnum.CLOSE_BRACKETS]: true,
+  [EditorConfigEnum.AUTOCOMPLETE]: true,
+  [EditorConfigEnum.RECTANGULAR_SELECTION]: true,
+  [EditorConfigEnum.CROSSHAIR_CURSOR]: true,
+  [EditorConfigEnum.HIGHLIGHT_ACTIVE_LINE]: true,
+  [EditorConfigEnum.HIGHLIGHT_SELECTION_MATCHES]: true
 }
 
 export function getExtensionsList(config) {
